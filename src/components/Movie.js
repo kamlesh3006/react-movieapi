@@ -47,19 +47,20 @@ export default function Movie() {
             </header>
             <section className="text-gray-600 body-font">
                 <div className="container px-5 py-10 mx-auto">
-                    <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
-                        {movieList.map((movie, index) => (
-                            <div key={index} className="p-4 md:w-1/5 mx-9 mb-8 border shadow-lg">
+                    <div className="flex flex-wrap -m-4">
+   {movieList.map((movie, index) => (
+      <div key={index} className="p-4 border shadow-lg w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5">
                                 <div className="items-center justify-items-center mx-auto overflow-hidden">
                                     <img
                                         alt="Cannot load movie poster"
                                         className="object-cover object-center h-full w-full"
-                                        style={{ minHeight: '400px', minWidth: '260px' }}
+                                        style={{ minWidth: '260px', minHeight: '400px' }}
                                         src={movie.Poster}
                                     />
                                 </div>
                                 <h2 className="text-xl font-medium mx-4 title-font text-start text-gray-900 mt-5">{movie.Title}</h2>
-                                <div className='flex inline-flex space-x-16'>
+
+                                <div className='flex justify-between'>
                                     <p className="text-base leading-relaxed mt-2">Year: {movie.Year}</p>
                                     <p className="text-base mt-2">Type: {movie.Type}</p>
                                 </div>
